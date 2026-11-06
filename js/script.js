@@ -155,8 +155,23 @@ function toggleIdeas() {
 if (toggleIdeasButton) {
   toggleIdeasButton.addEventListener("click", toggleIdeas);
 }
-// End of the labwork 5
+// THEME SWITCHING
 
+function toggleTheme() {
+  document.body.classList.toggle("theme-dark");
+
+  if (document.body.classList.contains("theme-dark")) {
+    themeToggleButton.textContent = "Light Theme";
+  } else {
+    themeToggleButton.textContent = "Dark Theme";
+  }
+}
+
+if (themeToggleButton) {
+  themeToggleButton.addEventListener("click", toggleTheme);
+}
+// End of the labwork 5
+//////////////////////////////////////////////////
 // Daily revenue values in rubles
 const dailyRevenue = [3200, 12500, 7800, 15000, 2800, 9400, 11800];
 
