@@ -18,6 +18,37 @@ body {
   color: var(--text-color);
 }
 
+/* DARK THEME */
+body.theme-dark {
+  --accent-color: #1f1f1f;
+  --text-color: #f5f5f5;
+  --light-bg: #2a2a2a;
+  --aside-bg: #333333;
+
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+body.theme-dark header,
+body.theme-dark footer {
+  background-color: #7c2d12;
+}
+
+body.theme-dark .startup-card,
+body.theme-dark .metric-card,
+body.theme-dark form,
+body.theme-dark aside {
+  background-color: var(--light-bg);
+  color: var(--text-color);
+}
+
+body.theme-dark input,
+body.theme-dark textarea {
+  background-color: #1f1f1f;
+  color: #ffffff;
+  border: 1px solid #666666;
+}
+
 main {
   max-width: 900px;
   margin: 0 auto;
