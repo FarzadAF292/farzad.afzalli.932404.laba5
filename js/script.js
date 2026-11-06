@@ -98,6 +98,43 @@ if (addIdeaButton) {
   addIdeaButton.addEventListener("click", addIdea);
 }
 
+// DELETE IDEAS
+// Delete a specific idea card
+if (ideasContainer) {
+  ideasContainer.addEventListener("click", function (event) {
+    if (event.target.classList.contains("delete-idea-btn")) {
+      const ideaCard = event.target.closest(".startup-card");
+
+      if (ideaCard) {
+        ideaCard.remove();
+      }
+    }
+  });
+}
+
+// Delete the last idea card
+function deleteLastIdea() {
+  if (!ideasContainer) {
+    console.error("Cannot delete idea: ideas container not found.");
+    return;
+  }
+
+  const cards = ideasContainer.querySelectorAll(".startup-card");
+
+  if (cards.length === 0) {
+    console.log("No startup ideas to delete.");
+    alert("The startup ideas list is empty.");
+    return;
+  }
+
+  const lastCard = cards[cards.length - 1];
+  lastCard.remove();
+}
+
+if (deleteLastButton) {
+  deleteLastButton.addEventListener("click", deleteLastIdea);
+}
+
 // End of the labwork 5
 
 // Daily revenue values in rubles
