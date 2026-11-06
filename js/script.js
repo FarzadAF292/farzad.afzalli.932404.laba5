@@ -92,6 +92,7 @@ function addIdea() {
   );
 
   ideasContainer.appendChild(newIdeaCard);
+  saveIdeas();
 }
 
 if (addIdeaButton) {
@@ -107,6 +108,7 @@ if (ideasContainer) {
 
       if (ideaCard) {
         ideaCard.remove();
+        saveIdeas();
       }
     }
   });
@@ -129,6 +131,7 @@ function deleteLastIdea() {
 
   const lastCard = cards[cards.length - 1];
   lastCard.remove();
+  saveIdeas();
 }
 
 if (deleteLastButton) {
@@ -165,11 +168,104 @@ function toggleTheme() {
   } else {
     themeToggleButton.textContent = "Dark Theme";
   }
+
+  saveTheme();
 }
 
 if (themeToggleButton) {
   themeToggleButton.addEventListener("click", toggleTheme);
 }
+
+// =========================
+// LAB 5 - LOCAL STORAGE
+// =========================
+
+// Save all current startup ideas to localStorage
+function saveIdeas() {
+  if (!ideasContainer) {
+    console.error("Cannot save ideas: ideas container not found.");
+    return;
+  }
+
+  const cards = ideasContainer.querySelectorAll(".startup-card");
+
+  const ideas = [];
+
+  cards.forEach(function (card) {
+    const title = card.querySelector("h3")?.textContent || "";
+    const paragraphs = card.querySelectorAll("p");
+
+    const audience = paragraphs[0]?.textContent
+      .replace("Target Audience:", "")
+      .trim();
+
+    const metric = paragraphs[1]?.textContent.replace("Metric:", "").trim();
+
+    ideas.push({
+      name: title,
+      audience: audience,
+      metric: metric,
+    });
+  });
+
+  localStorage.setItem("startupIdeas", JSON.stringify(ideas));
+}
+
+// Restore startup ideas from localStorage
+function loadIdeas() {
+  if (!ideasContainer) {
+    console.error("Cannot load ideas: ideas container not found.");
+    return;
+  }
+
+  const savedIdeas = localStorage.getItem("startupIdeas");
+
+  if (!savedIdeas) {
+    return;
+  }
+
+  const ideas = JSON.parse(savedIdeas);
+
+  ideasContainer.innerHTML = "";
+
+  ideas.forEach(function (idea) {
+    const card = createIdeaCard(idea.name, idea.audience, idea.metric);
+
+    ideasContainer.appendChild(card);
+  });
+}
+
+// Save selected theme
+function saveTheme() {
+  const currentTheme = document.body.classList.contains("theme-dark")
+    ? "dark"
+    : "light";
+
+  localStorage.setItem("theme", currentTheme);
+}
+
+// Restore selected theme
+function loadTheme() {
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("theme-dark");
+
+    if (themeToggleButton) {
+      themeToggleButton.textContent = "Light Theme";
+    }
+  } else {
+    document.body.classList.remove("theme-dark");
+
+    if (themeToggleButton) {
+      themeToggleButton.textContent = "Dark Theme";
+    }
+  }
+}
+
+loadIdeas();
+loadTheme();
+
 // End of the labwork 5
 //////////////////////////////////////////////////
 // Daily revenue values in rubles
