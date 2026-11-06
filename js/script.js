@@ -1,3 +1,39 @@
+// DOM ELEMENTS
+// Find buttons by ID
+const addIdeaButton = document.getElementById("add-idea-btn");
+const deleteLastButton = document.getElementById("delete-last-btn");
+const toggleIdeasButton = document.getElementById("toggle-ideas-btn");
+const themeToggleButton = document.getElementById("theme-toggle-btn");
+
+// Find the startup ideas container
+const ideasContainer = document.querySelector("#ideas-container");
+
+// Find all current startup cards
+const ideaCards = document.querySelectorAll(".startup-card");
+
+// Check that required elements exist
+if (!addIdeaButton) {
+  console.error("Element not found: add-idea-btn");
+}
+
+if (!deleteLastButton) {
+  console.error("Element not found: delete-last-btn");
+}
+
+if (!toggleIdeasButton) {
+  console.error("Element not found: toggle-ideas-btn");
+}
+
+if (!themeToggleButton) {
+  console.error("Element not found: theme-toggle-btn");
+}
+
+if (!ideasContainer) {
+  console.error("Element not found: #ideas-container");
+}
+
+console.log("Startup cards found:", ideaCards.length);
+
 // Daily revenue values in rubles
 const dailyRevenue = [3200, 12500, 7800, 15000, 2800, 9400, 11800];
 
