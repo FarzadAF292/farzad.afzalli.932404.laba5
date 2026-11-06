@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="./src/styles.css">
     <link rel="icon" href="./img/farzad.png" type="image/x-icon">
 
@@ -24,6 +25,7 @@
 </head>
 
 <body>
+
     <header>
         <h1>Farzad Afzalli</h1>
         <h2>Entrepreneur and Startup Enthusiast</h2>
@@ -41,6 +43,7 @@
     <main>
 
         <img src="./img/farzad.png" alt="Portrait of Farzad Afzalli" width="200" height="200">
+
         <p>
             I am a student interested in technology, entrepreneurship, and building useful digital products.
             I enjoy learning how ideas can be turned into real projects that solve everyday problems.
@@ -57,66 +60,89 @@
             </ul>
         </section>
 
+        <!-- Lab 5: Startup ideas management -->
         <section id="projects">
             <h2>Startup Ideas</h2>
 
-            <div class="startup-cards">
+            <div class="idea-controls">
+                <button id="add-idea-btn" type="button">Add Idea</button>
+                <button id="delete-last-btn" type="button">Delete Last</button>
+                <button id="toggle-ideas-btn" type="button">Hide Ideas</button>
+                <button id="theme-toggle-btn" type="button">Toggle Theme</button>
+            </div>
+
+            <div id="ideas-container" class="startup-cards">
 
                 <article class="startup-card">
                     <h3>Smart Booking Platform</h3>
 
                     <p>
-                        <strong>Problem:</strong>
-                        Many small businesses still manage appointments manually.
+                        <strong>Target Audience:</strong>
+                        Small local businesses
                     </p>
 
                     <p>
-                        <strong>Solution:</strong>
-                        A web platform that allows customers to book services online
-                        and helps businesses manage appointments efficiently.
+                        <strong>Metric:</strong>
+                        Monthly bookings
                     </p>
+
+                    <button type="button" class="delete-idea-btn">
+                        Delete
+                    </button>
                 </article>
 
                 <article class="startup-card">
                     <h3>Student Learning Hub</h3>
 
                     <p>
-                        <strong>Problem:</strong>
-                        Students often struggle to find organized and accessible learning resources.
+                        <strong>Target Audience:</strong>
+                        University students
                     </p>
 
                     <p>
-                        <strong>Solution:</strong>
-                        A platform that brings courses, notes, and study tools together in one place.
+                        <strong>Metric:</strong>
+                        Monthly active users
                     </p>
+
+                    <button type="button" class="delete-idea-btn">
+                        Delete
+                    </button>
                 </article>
 
                 <article class="startup-card">
                     <h3>Local Business Marketplace</h3>
 
                     <p>
-                        <strong>Problem:</strong>
-                        Small local businesses often have limited online visibility.
+                        <strong>Target Audience:</strong>
+                        Small businesses and customers
                     </p>
 
                     <p>
-                        <strong>Solution:</strong>
-                        A marketplace that helps local businesses present their products and services online.
+                        <strong>Metric:</strong>
+                        Monthly transactions
                     </p>
+
+                    <button type="button" class="delete-idea-btn">
+                        Delete
+                    </button>
                 </article>
 
                 <article class="startup-card">
                     <h3>AI Productivity Assistant</h3>
 
                     <p>
-                        <strong>Problem:</strong>
-                        People lose time managing repetitive daily tasks.
+                        <strong>Target Audience:</strong>
+                        Students and professionals
                     </p>
 
                     <p>
-                        <strong>Solution:</strong>
-                        An AI-powered assistant that helps organize tasks, reminders, and daily workflows.
+                        <strong>Metric:</strong>
+                        Daily active users
                     </p>
+
+                    <button type="button" class="delete-idea-btn">
+                        Delete
+                    </button>
                 </article>
 
             </div>
@@ -131,7 +157,9 @@
                     <h3>MAU</h3>
                     <p>Monthly Active Users</p>
 
-                    <meter min="0" max="100" value="75">75%</meter>
+                    <meter min="0" max="100" value="75">
+                        75%
+                    </meter>
 
                     <p>
                         Measures the number of users who actively use the product
@@ -143,7 +171,9 @@
                     <h3>LTV</h3>
                     <p>Customer Lifetime Value</p>
 
-                    <meter min="0" max="100" value="65">65%</meter>
+                    <meter min="0" max="100" value="65">
+                        65%
+                    </meter>
 
                     <p>
                         Represents the estimated value a customer brings to the
@@ -155,7 +185,9 @@
                     <h3>CAC</h3>
                     <p>Customer Acquisition Cost</p>
 
-                    <meter min="0" max="100" value="40">40%</meter>
+                    <meter min="0" max="100" value="40">
+                        40%
+                    </meter>
 
                     <p>
                         Shows how much the business spends to acquire a new customer.
@@ -167,6 +199,7 @@
 
         <aside id="business">
             <h2>My Business Approach</h2>
+
             <p>
                 My key value is to create useful products that solve real problems
                 and bring real value to people.
@@ -177,17 +210,22 @@
             <h2>Contact Me</h2>
 
             <label for="name">Name</label>
+
             <input type="text" id="name" name="name" placeholder="Enter your name">
 
             <label for="email">Email</label>
+
             <input type="email" id="email" name="email" placeholder="Enter your email">
 
             <label for="message">Message</label>
+
             <textarea id="message" name="message" placeholder="Write your message"></textarea>
 
-            <!-- Add a submit button with a pointer cursor style (the style is an inline ) -->
-            <button type="submit" style="cursor: pointer;">Send</button>
+            <button type="submit" style="cursor: pointer;">
+                Send
+            </button>
         </form>
+
     </main>
 
     <footer>
@@ -195,6 +233,7 @@
     </footer>
 
     <script src="./js/script.js"></script>
+
 </body>
 
 </html>
