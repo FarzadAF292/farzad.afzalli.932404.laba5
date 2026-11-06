@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles.css">
+    <link rel="icon" href="./img/farzad.png" type="image/x-icon">
+
+    <style>
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+    </style>
+
+    <title>About Me</title>
+</head>
+
+<body>
+    <header>
+        <h1>Farzad Afzalli</h1>
+        <h2>Entrepreneur and Startup Enthusiast</h2>
+
+        <span class="startup-badge">Startup Mindset</span>
+
+        <nav>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#business">Business Approach</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <img src="./img/farzad.png" alt="Portrait of Farzad Afzalli" width="200" height="200">
+        <p>
+            I am a student interested in technology, entrepreneurship, and building useful digital products.
+            I enjoy learning how ideas can be turned into real projects that solve everyday problems.
+        </p>
+
+        <section id="skills">
+            <h2>Skills</h2>
+
+            <ul>
+                <li>Marketing</li>
+                <li>Project Management</li>
+                <li>Financial Planning</li>
+                <li>Product Development</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Startup Ideas</h2>
+
+            <div class="startup-cards">
+
+                <article class="startup-card">
+                    <h3>Smart Booking Platform</h3>
+
+                    <p>
+                        <strong>Problem:</strong>
+                        Many small businesses still manage appointments manually.
+                    </p>
+
+                    <p>
+                        <strong>Solution:</strong>
+                        A web platform that allows customers to book services online
+                        and helps businesses manage appointments efficiently.
+                    </p>
+                </article>
+
+                <article class="startup-card">
+                    <h3>Student Learning Hub</h3>
+
+                    <p>
+                        <strong>Problem:</strong>
+                        Students often struggle to find organized and accessible learning resources.
+                    </p>
+
+                    <p>
+                        <strong>Solution:</strong>
+                        A platform that brings courses, notes, and study tools together in one place.
+                    </p>
+                </article>
+
+                <article class="startup-card">
+                    <h3>Local Business Marketplace</h3>
+
+                    <p>
+                        <strong>Problem:</strong>
+                        Small local businesses often have limited online visibility.
+                    </p>
+
+                    <p>
+                        <strong>Solution:</strong>
+                        A marketplace that helps local businesses present their products and services online.
+                    </p>
+                </article>
+
+                <article class="startup-card">
+                    <h3>AI Productivity Assistant</h3>
+
+                    <p>
+                        <strong>Problem:</strong>
+                        People lose time managing repetitive daily tasks.
+                    </p>
+
+                    <p>
+                        <strong>Solution:</strong>
+                        An AI-powered assistant that helps organize tasks, reminders, and daily workflows.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="metrics-section">
+            <h2>Key Metrics</h2>
+
+            <div class="metrics-grid">
+
+                <article class="metric-card">
+                    <h3>MAU</h3>
+                    <p>Monthly Active Users</p>
+
+                    <meter min="0" max="100" value="75">75%</meter>
+
+                    <p>
+                        Measures the number of users who actively use the product
+                        during a month.
+                    </p>
+                </article>
+
+                <article class="metric-card">
+                    <h3>LTV</h3>
+                    <p>Customer Lifetime Value</p>
+
+                    <meter min="0" max="100" value="65">65%</meter>
+
+                    <p>
+                        Represents the estimated value a customer brings to the
+                        business during their relationship with the company.
+                    </p>
+                </article>
+
+                <article class="metric-card">
+                    <h3>CAC</h3>
+                    <p>Customer Acquisition Cost</p>
+
+                    <meter min="0" max="100" value="40">40%</meter>
+
+                    <p>
+                        Shows how much the business spends to acquire a new customer.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <aside id="business">
+            <h2>My Business Approach</h2>
+            <p>
+                My key value is to create useful products that solve real problems
+                and bring real value to people.
+            </p>
+        </aside>
+
+        <form id="contact">
+            <h2>Contact Me</h2>
+
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Write your message"></textarea>
+
+            <!-- Add a submit button with a pointer cursor style (the style is an inline ) -->
+            <button type="submit" style="cursor: pointer;">Send</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Farzad Afzalli</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

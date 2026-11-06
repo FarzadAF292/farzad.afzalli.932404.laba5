@@ -1,0 +1,311 @@
+/* ROOT VARIABLES */
+
+:root {
+  --primary-color: #c2410c;
+  --accent-color: #ffffff;
+  --text-color: #222222;
+  --light-bg: #fff7ed;
+  --aside-bg: #fff3e8;
+  --font-main: Arial, sans-serif;
+}
+
+/* GENERAL PAGE STYLES */
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+section,
+aside,
+form {
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: var(--primary-color);
+}
+
+/* HEADER */
+
+/* Relative positioning */
+header {
+  position: relative;
+  background-color: var(--primary-color);
+  text-align: center;
+  padding: 30px 20px;
+}
+
+header h1,
+header h2 {
+  color: var(--accent-color);
+}
+
+/* STARTUP BADGE */
+
+/* Absolute positioning */
+.startup-badge {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+
+  padding: 6px 10px;
+  border-radius: 6px;
+
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* NAVIGATION STATES */
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav a:visited {
+  color: var(--accent-color);
+}
+
+/* SKILLS SECTION */
+
+/* Static positioning */
+#skills {
+  position: static;
+}
+
+/* PROFILE IMAGE */
+
+img {
+  display: block;
+  margin: 20px auto;
+
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* FLEXBOX STARTUP CARDS */
+
+.startup-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.startup-card {
+  flex: 1 1 calc(25% - 20px);
+  min-width: 220px;
+
+  background-color: var(--light-bg);
+
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.startup-card h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+/* GRID: KEY METRICS */
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.metric-card {
+  background-color: var(--light-bg);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.metric-card h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.metric-card meter {
+  width: 100%;
+  height: 20px;
+}
+
+/* BUSINESS APPROACH */
+
+aside {
+  background-color: var(--aside-bg);
+
+  padding: 20px;
+  border-left: 5px solid var(--primary-color);
+}
+
+/* CONTACT FORM */
+
+form {
+  background-color: var(--light-bg);
+
+  padding: 20px;
+  border-radius: 10px;
+}
+
+label {
+  display: block;
+
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  width: 100%;
+
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+/* Form focus states */
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--primary-color);
+  border-radius: 4px;
+}
+
+/* BUTTON */
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+
+  color: var(--accent-color);
+
+  border: none;
+  border-radius: 8px;
+
+  font-weight: bold;
+  cursor: pointer;
+
+  background: linear-gradient(90deg, #c2410c, #9a3412, #c2410c);
+
+  background-size: 200% 100%;
+  background-position: left center;
+
+  transition:
+    background-position 0.4s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Gradient moves on hover */
+
+button:hover {
+  background-position: right center;
+}
+
+/* White outline and shadow on focus */
+
+button:focus {
+  outline: 3px solid var(--accent-color);
+  box-shadow: 0 0 0 4px var(--primary-color);
+}
+
+/* Smaller gradient shift on active */
+
+button:active {
+  background-position: center;
+  transform: scale(0.98);
+}
+
+/* FOOTER */
+
+footer {
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+
+  text-align: center;
+  padding: 15px;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .startup-card {
+    flex: 1 1 calc(50% - 20px);
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  main {
+    padding: 20px 15px;
+  }
+
+  header {
+    padding: 25px 15px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  nav a {
+    margin: 0;
+  }
+
+  .startup-badge {
+    position: static;
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  .startup-card {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  input,
+  textarea,
+  button {
+    max-width: 100%;
+  }
+}
+/* Everything is ok and responsive */
