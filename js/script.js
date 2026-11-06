@@ -135,6 +135,26 @@ if (deleteLastButton) {
   deleteLastButton.addEventListener("click", deleteLastIdea);
 }
 
+// HIDE / SHOW IDEAS
+
+function toggleIdeas() {
+  if (!ideasContainer) {
+    console.error("Cannot toggle ideas: ideas container not found.");
+    return;
+  }
+
+  ideasContainer.classList.toggle("hidden");
+
+  if (ideasContainer.classList.contains("hidden")) {
+    toggleIdeasButton.textContent = "Show Ideas";
+  } else {
+    toggleIdeasButton.textContent = "Hide Ideas";
+  }
+}
+
+if (toggleIdeasButton) {
+  toggleIdeasButton.addEventListener("click", toggleIdeas);
+}
 // End of the labwork 5
 
 // Daily revenue values in rubles

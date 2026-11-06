@@ -258,7 +258,6 @@ footer {
 }
 
 /* LAB 5 CONTROLS */
-
 .idea-controls {
   display: flex;
   flex-wrap: wrap;
@@ -268,6 +267,11 @@ footer {
 
 .idea-controls button {
   margin-top: 0;
+}
+
+/* Hide startup ideas */
+.hidden {
+  display: none;
 }
 
 /* Mobile */
