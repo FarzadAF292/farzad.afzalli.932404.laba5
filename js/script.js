@@ -1,4 +1,4 @@
-// DOM ELEMENTS
+// LABA 5 - DOM ELEMENTS
 // Find buttons by ID
 const addIdeaButton = document.getElementById("add-idea-btn");
 const deleteLastButton = document.getElementById("delete-last-btn");
@@ -33,6 +33,72 @@ if (!ideasContainer) {
 }
 
 console.log("Startup cards found:", ideaCards.length);
+
+// ADD IDEA
+function createIdeaCard(name, audience, metric) {
+  const article = document.createElement("article");
+  article.classList.add("startup-card");
+
+  const title = document.createElement("h3");
+  title.textContent = name;
+
+  const audienceParagraph = document.createElement("p");
+  audienceParagraph.innerHTML = `<strong>Target Audience:</strong> ${audience}`;
+
+  const metricParagraph = document.createElement("p");
+  metricParagraph.innerHTML = `<strong>Metric:</strong> ${metric}`;
+
+  const deleteButton = document.createElement("button");
+  deleteButton.type = "button";
+  deleteButton.classList.add("delete-idea-btn");
+  deleteButton.textContent = "Delete";
+
+  article.appendChild(title);
+  article.appendChild(audienceParagraph);
+  article.appendChild(metricParagraph);
+  article.appendChild(deleteButton);
+
+  return article;
+}
+
+function addIdea() {
+  if (!ideasContainer) {
+    console.error("Cannot add idea: ideas container not found.");
+    return;
+  }
+
+  const ideaName = prompt("Enter startup idea name:");
+
+  if (ideaName === null || ideaName.trim() === "") {
+    return;
+  }
+
+  const targetAudience = prompt("Enter target audience:");
+
+  if (targetAudience === null || targetAudience.trim() === "") {
+    return;
+  }
+
+  const metric = prompt("Enter startup metric:");
+
+  if (metric === null || metric.trim() === "") {
+    return;
+  }
+
+  const newIdeaCard = createIdeaCard(
+    ideaName.trim(),
+    targetAudience.trim(),
+    metric.trim(),
+  );
+
+  ideasContainer.appendChild(newIdeaCard);
+}
+
+if (addIdeaButton) {
+  addIdeaButton.addEventListener("click", addIdea);
+}
+
+// End of the labwork 5
 
 // Daily revenue values in rubles
 const dailyRevenue = [3200, 12500, 7800, 15000, 2800, 9400, 11800];
